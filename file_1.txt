@@ -209,4 +209,4 @@ $ `mkdir test3`
 
   17.	Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
 
-  curl -X POST https://petstore.swagger.io/v2/pet --data “name = Kitty” --data “status = available”
+  curl -X POST https://petstore.swagger.io/v2/pet --data “name = Donald” --data “status = available”
