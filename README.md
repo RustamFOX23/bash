@@ -2,6 +2,7 @@
 
 ### Задание Bash
 
+
 1. Открыть домашнюю директорию
 
  /c/Users/Azerty/Desktop/дз тесты/bash_training/bash
