@@ -1,6 +1,6 @@
-# bash 1
+# bash 
 
-### Задание Bash
+### Задание Bash 1
 
 
 1. Открыть домашнюю директорию
@@ -92,3 +92,135 @@ $ `mkdir test3`
 19.Используя один из редакторов замените все строки в файле 1
 
  $ `nano 1.txt`
+
+
+ ### Задание Bash 2
+
+ 1.Зайти в домашнюю директорию
+
+  /c/Users/Azerty/Desktop/дз тесты/bash_training/bash
+  $ `cd ~`
+
+ 2.Создать папку test 3
+
+  $ `mkdir test3`
+
+ 3.Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4
+
+  $ `touch test3/file {4,5,6}.txt`
+
+  $ `echo row1, row2, row3, row4 > 4.txt`
+
+  $ `echo row1, row2, row3, row4 > 5.txt`
+
+  $ `echo -e "row1\nrow2\nrow3\nrow4" > 6.txt`
+
+ 4.Найдите строку row2 в файле 5
+
+  $ `grep "row2" 5.txt`
+  
+  row1, row2, row3, row4
+
+  5.Найдите строку row в папке test3
+
+  $ `grep 'row' ./test3  -r`
+  ./test3/4.txt:row1, row2, row3, row4
+  ./test3/5.txt:row1, row2, row3, row4
+  row4st3/6.txt:row1
+  6.Посчитайте сколько строк с содержимым row в файле 6
+  
+  $ `grep 'row' 6.txt -c`
+  4
+  7.Найдите файл 5 внутри папки test3
+
+  $ `find ./test3  -name 5.txt`
+
+  ./test3/5.txt
+
+  8.Используя команду find, удалите файл 5
+
+  $ `find ./test3  -name 5.txt -delete`
+
+  9.Используя команду echo, добавьте слово test в файл 4
+
+  $ `echo "test" >> ./test3/4.txt`
+
+  10.Замените слово test в файле 4 на fail
+
+  $ `sed 's/test/fail/g' 4.txt`
+  row1, row2, row3, row4
+  fail
+
+  $ `sed 's/test/fail/g' 4.txt -i`
+
+  11.Добавьте в файл 4 слово test так, чтобы сохранилось содержимое
+
+  $ `echo "test" >> ./test3/4.txt`
+
+  12.Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
+
+  $ `ps aux`
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+      990       1     990      12208  cons0     197609 11:54:30 /usr/bin/bash
+     1117     990    1117      11928  cons0     197609 12:44:20 /usr/bin/ps 
+
+
+  13.Убейте процесс 666 в консоли
+  
+  $ `Kill  666`
+
+  14.Узнайте доступность ресурса artsiomrusau.com, используя ping
+  
+  $ `ping artsiomrusau.com`
+
+Обмен пакетами с artsiomrusau.com [185.215.4.92] с 32 байтами данных:
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+
+Статистика Ping для 185.215.4.92:
+    Пакетов: отправлено = 4, получено = 0, потеряно = 4
+    (100% потерь)
+
+
+  15.Отправьте 5 пакетов на сайт artsiomrusau.com
+
+  $ `ping -n 5  artsiomrusau.com`
+
+Обмен пакетами с artsiomrusau.com [185.215.4.92] с 32 байтами данных:
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+Превышен интервал ожидания для запроса.
+
+Статистика Ping для 185.215.4.92:
+    Пакетов: отправлено = 5, получено = 0, потеряно = 5
+    (100% потерь)
+
+  16.Используя GET и команду curl, получите информацию о зарегистрированных питомцах на https://petstore.swagger.io/
+
+  $ curl -X 'GET' \
+>   'https://petstore.swagger.io/v2/store/inventory' \
+>   -H 'accept: application/json'
+{"sold":1,"string":796,"pending":2,"available":198}
+
+  17.Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+
+  $ curl -X 'POST' \
+  >   'https://petstore.swagger.io/v2/user' \
+  >   -H 'accept: application/json' \        
+  >   -H 'Content-Type: application/json' \
+  >   -d '{
+  >   "id": 0,
+  >   "username": "Wader",
+  >   "firstName": "Lord",
+  >   "lastName": "Wader", 
+  >   "email": "qw@maq.ty",
+  >   "password": "12344", 
+  >   "phone": "string",   
+  >   "userStatus": 0
+  > }'
+  {"code":200,"type":"unknown","message":"9223372036854756579"}
+
