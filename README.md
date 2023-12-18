@@ -160,6 +160,8 @@ $ `mkdir test3`
   12.Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
 
   $ `ps aux`
+      
+      
       PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
       990       1     990      12208  cons0     197609 11:54:30 /usr/bin/bash
      1117     990    1117      11928  cons0     197609 12:44:20 /usr/bin/ps 
