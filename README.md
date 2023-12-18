@@ -203,28 +203,10 @@ $ `mkdir test3`
     Пакетов: отправлено = 5, получено = 0, потеряно = 5
     (100% потерь)
 
-  16.Используя GET и команду curl, получите информацию о зарегистрированных питомцах на https://petstore.swagger.io/
+  16.	Используя GET и команду curl, получите информацию о зарегистрированных питомцах на https://petstore.swagger.io/
 
-  $ curl -X 'GET' \
->   'https://petstore.swagger.io/v2/store/inventory' \
->   -H 'accept: application/json'
-{"sold":1,"string":796,"pending":2,"available":198}
+  curl -X GET https://petstore.swagger.io/v2/pet/{petId}
 
-  17.Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+  17.	Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
 
-  $ curl -X 'POST' \
-  >   'https://petstore.swagger.io/v2/user' \
-  >   -H 'accept: application/json' \        
-  >   -H 'Content-Type: application/json' \
-  >   -d '{
-  >   "id": 0,
-  >   "username": "Wader",
-  >   "firstName": "Lord",
-  >   "lastName": "Wader", 
-  >   "email": "qw@maq.ty",
-  >   "password": "12344", 
-  >   "phone": "string",   
-  >   "userStatus": 0
-  > }'
-  {"code":200,"type":"unknown","message":"9223372036854756579"}
-
+  curl -X POST https://petstore.swagger.io/v2/pet --data “name = Kitty” --data “status = available”
