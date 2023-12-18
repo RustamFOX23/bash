@@ -127,10 +127,12 @@ $ `mkdir test3`
   ./test3/4.txt:row1, row2, row3, row4
   ./test3/5.txt:row1, row2, row3, row4
   row4st3/6.txt:row1
+  
   6.Посчитайте сколько строк с содержимым row в файле 6
   
   $ `grep 'row' 6.txt -c`
   4
+  
   7.Найдите файл 5 внутри папки test3
 
   $ `find ./test3  -name 5.txt`
